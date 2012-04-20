@@ -8,7 +8,7 @@ if [ "$FRAMERATE" = "" ] ; then
 fi	
 read -p "Please enter a filename (Default: timelapse): " FILENAME
 if [ "$FILENAME" = "" ] ; then
-	FILENAME=timelapese
+	FILENAME=timelapse
 fi	
 ffmpeg -r $FRAMERATE -i %d.jpg -b 15000k $FILENAME.mov
 }
