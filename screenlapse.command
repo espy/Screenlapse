@@ -16,8 +16,8 @@ ffmpeg -r $FRAMERATE -i %d.jpg -b 15000k $FILENAME.mov
 control_c()
 # run if user hits control-c
 {
-	echo -en "\nScreen recording stopped"
-	echo "Saved $TOTALSHOTS screenshots"
+	echo "\n\nScreen recording stopped."
+	echo "Saved $TOTALSHOTS screenshots."
 	FILM12FPS=$(($TOTALSHOTS / 12))
 	FILM24FPS=$(($TOTALSHOTS / 24))
  	echo "That's $FILM12FPS seconds of film at 12fps and $FILM24FPS seconds at 24fps."
@@ -56,5 +56,5 @@ if [ "$TARGETWIDTH" != "" ] ; then
 	sips $i.jpg --resampleWidth $TARGETWIDTH --out $i.jpg &> /dev/null 
 fi
 TOTALSHOTS=$i
-printf "\rScreenshots saved: $i"
+printf "\rTook $TOTALSHOTS screenshots so far."
 let i++;sleep $INTERVAL; done
